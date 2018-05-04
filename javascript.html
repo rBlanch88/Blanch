@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<title> JavaScript </title>
+<style>
+button { 
+    font-size: 1.1em;
+    background-color: Black;
+    color: Orange;
+    border: 2px solid orange;
+    box-shadow: 4px 4px 4px #999999;
+  }
+  button:hover, button:focus, button:active { 
+    /* swap colors */
+    color: Black;
+    background-color: Orange;
+    cursor: no-drop; /* displays a hand */
+  }
+   div#clock { 
+	border: 2px solid black;
+	color: black;
+	background-color: orange;
+	margin: 50px 410px;
+	display: none;
+	cursor: pointer;
+}
+  </style>
+<script>
+  function showAlert() { 
+    var myText = "Hi";
+    alert (myText);
+  }
+  function updateTime() { 
+
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+	if (minutes < 10) { 
+    minutes = '0' + minutes;
+  }
+  if (seconds < 10) { 
+    seconds = '0' + seconds;
+  }				 
+  if (hours >= 12 && hours < 24) { 
+    var timeOfDay = 'pm';
+  }
+  else { 
+    var timeOfDay = 'am'; 
+  }
+  if (hours > 12) { 
+    hours = hours - 12;
+  }
+    var currentTime = hours + ':' + minutes + ':' + seconds + '  ' + timeOfDay;   
+    var myClock = document.getElementById('clock');
+    myClock.innerHTML = currentTime;	
+}
+ function toggleClock() {  
+    var myClock = document.getElementById('clock');
+    var displaySetting = myClock.style.display;    
+    var clockButton = document.getElementById('clockButton');				
+    if (displaySetting == 'block') {     
+      myClock.style.display = 'none';    
+      clockButton.innerHTML = 'Show clock';
+    }
+    else {  
+      myClock.style.display = 'block';     
+      clockButton.innerHTML = 'Hide clock';
+    }
+  }  
+</script>
+
+<link rel="stylesheet" type="text/css" href="MyStyle.css">
+<link rel="shortcut icon" href="images/favicon.png">
+</head>
+
+<body>
+<button onclick="showAlert()">Don't Press</button>
+
+
+<h1 id="myHeader"> JavaScript </h1>
+<h2> Content </h2>
+<nav>
+<ul>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/index.html"> Home Page </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/Accesabilitly.html"> Accessability </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/graphics.html">      Graphics </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/javascript.html">    JavaScript </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/tools.html">         Tools </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/usability.html">     Usability </a> </li>
+<li> <a href="file://///brsd-jb-fs01/2020$/20BlanchardR/WebPortfolio_Ryan/video.html">         Video </a> </li>
+</ul>
+</nav>
+<button onclick="toggleClock()" id="clockButton">Show clock</button>
+
+<!-- <div id="clock"></div>
+<body onload="setInterval('updateTime()',1000)"> -->
+
+
+</body>
+</html>
