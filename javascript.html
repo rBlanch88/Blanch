@@ -76,6 +76,7 @@ button {
 
 <body>
 <button onclick="showAlert()">Don't Press</button>
+	<body onload="setInterval('updateTime()',1000)">
 
 
 <h1 id="myHeader"> JavaScript </h1>
@@ -92,6 +93,7 @@ button {
 </ul>
 </nav>
 <button onclick="toggleClock()" id="clockButton">Show clock</button>
+	<div id="clock"></div>
 
 <!-- <div id="clock"></div>
 <body onload="setInterval('updateTime()',1000)"> -->
