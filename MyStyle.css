@@ -47,11 +47,6 @@ h3 {
 #link {
 	text-align; center;
 	Color: orange;
-	border-top-left-radius: 1em 1em; /* rounded corner */
-	border-top-right-radius: 1em 1em; /* rounded corner */
-	border-bottom-left-radius: 1em 1em; /* rounded corner */
-	border-bottom-right-radius: 1em 1em; /* rounded corner */
-	border-color:black;
 }
 
 .unit { 
